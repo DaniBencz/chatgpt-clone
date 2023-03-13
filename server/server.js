@@ -69,16 +69,16 @@ app.post('/davinci', async (req, res) => {
         {"role": "user", "content": `${cleanPrompt}?`}
     ],
       temperature: 0.5,
-      max_tokens: 500,
+      max_tokens: 1000,
       top_p: 0.5,
       frequency_penalty: 0.5,
       presence_penalty: 0.2,
     })
 
-    console.log(response.data.choices[0].text)
+    console.log(response.data.choices[0].message.content);
     // Return response from OpenAI API
     res.status(200).send({
-      bot: response.data.choices[0].text,
+      bot: response.data.choices[0].message.content,
     })
   } catch (error) {
     // Log error and return a generic error message

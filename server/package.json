@@ -8,8 +8,9 @@
     "node": "v18.12.1"
   },
   "scripts": {
-    "start": "nodemon server",
-    "server": "nodemon server"
+    "start": "node server",
+    "server": "nodemon server",
+    "debug": "nodemon --inspect server"
   },
   "keywords": [],
   "author": "",
